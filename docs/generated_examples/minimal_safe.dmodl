@@ -1,0 +1,20 @@
+Header:
+	maxIter = 20
+	report = Solver
+	maxReps = -1
+	outToTxt = false
+	startTime = 0
+	dTime = 0.001
+	endTime = 1
+end
+
+Model [type=DAE domain=real method=RK2 name="Minimal PV inverter"]:
+Vars [out=true]:
+	p_ac = 0
+	q_ac = 0
+	p_dc = 0
+ODEs:
+	p_ac' = (7.2 - p_ac) / 0.12
+	q_ac' = (1.46202 - q_ac) / 0.12
+	p_dc' = (7.3872 - p_dc) / 0.12
+end

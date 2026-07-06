@@ -1,0 +1,13 @@
+Header:
+	newTab = false
+	drawPlots = true
+end
+Model [name="Solar inverter visualization"]:
+Plots [backColor=auto]:
+	linePlot [xLabel="Time [s]" yLabel="Power" name="PV inverter" legend=true]:
+		@x << t
+		@y << p_ac [colorL=darkGreen colorD=green width=2 name="Pac"]
+		@y << q_ac [colorL=darkBlue colorD=cyan width=2 name="Qac"]
+		@y << p_dc [colorL=darkRed colorD=red width=2 name="Pdc"]
+	end
+end

@@ -1,0 +1,42 @@
+Header:
+	maxIter = 20
+	report = Solver
+	maxReps = -1
+	outToTxt = false
+	startTime = 0
+	dTime = 0.001
+	endTime = 2
+end
+
+// Model created by SREES PV inverter converter
+// Case: case30, buses: 30
+// Matrix backend: natID dense::DblMatrix + sparse::IDblMatrix
+
+Model [type=DAE domain=real method=RK2 name="PV inverter model"]:
+Vars [out=true]:
+	p_ac = 0
+	q_ac = 0
+	p_dc = 0
+	irradiance = 950
+	cell_temp = 32
+Params:
+	p_ac_ref = 7.2
+	q_ac_ref = 1.46202
+	p_dc_ref = 7.3872
+	inverter_tau = 0.12
+	connection_bus = 5
+	dc_rated_mw = 8
+	ac_rated_mw = 7.2
+	power_factor = 0.98
+	dense_rows = 30
+	dense_cols = 30
+	sparse_rows = 30
+	sparse_cols = 30
+	sparse_nonzeros = 89
+ODEs:
+	p_ac' = (p_ac_ref - p_ac) / inverter_tau
+	q_ac' = (q_ac_ref - q_ac) / inverter_tau
+	p_dc' = (p_dc_ref - p_dc) / inverter_tau
+	irradiance' = 0
+	cell_temp' = 0
+end

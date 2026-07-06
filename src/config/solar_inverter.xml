@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solarInverter name="PV inverter model">
+  <connection bus="5"/>
+  <pvArray dcRatedPowerMw="8.0" temperatureCoefficientPerC="-0.004"/>
+  <inverter acRatedPowerMw="7.2" powerFactor="0.98"/>
+  <environment irradianceWm2="950.0" referenceIrradianceWm2="1000.0" cellTemperatureC="32.0" referenceTemperatureC="25.0"/>
+</solarInverter>

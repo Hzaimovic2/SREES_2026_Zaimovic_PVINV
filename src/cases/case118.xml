@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<case name="case118">
+  <base mva="100.0"/>
+  <buses count="118"/>
+  <branches count="186"/>
+</case>

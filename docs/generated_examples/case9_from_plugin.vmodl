@@ -1,0 +1,19 @@
+Header:
+	newTab = false
+	drawPlots = true
+end
+Model [name="Solar inverter visualization"]:
+Plots [backColor=auto]:
+	linePlot [xLabel="Time [s]" yLabel="Power [MW/MVAr]" name="PV inverter" legend=true]:
+		@x << t
+		@y << p_ac [colorL=darkGreen colorD=green width=2 name="Pac"]
+		@y << q_ac [colorL=darkBlue colorD=cyan width=2 name="Qac"]
+		@y << p_dc [colorL=darkRed colorD=red width=2 name="Pdc"]
+	end
+	linePlot [xLabel="Time [s]" yLabel="Power [p.u.]" name="PV inverter pu" legend=true]:
+		@x << t
+		@y << p_ac / ac_rated_mw [colorL=darkGreen colorD=green width=2 name="Pac pu"]
+		@y << q_ac / ac_rated_mw [colorL=darkBlue colorD=cyan width=2 name="Qac pu"]
+		@y << p_dc / dc_rated_mw [colorL=darkRed colorD=red width=2 name="Pdc pu"]
+	end
+end

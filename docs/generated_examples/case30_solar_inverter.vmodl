@@ -1,0 +1,19 @@
+Header:
+	newTab = false
+	drawPlots = true
+end
+Model [name="Solar inverter visualization"]:
+Plots [backColor=auto]:
+	linePlot [xLabel="t [s]" yLabel="MW" name="PV response" legend=true]:
+		@x << t
+		@y << p_ac [colorL=darkGreen colorD=green width=2 name="Pac"]
+		@y << q_ac [colorL=darkBlue colorD=cyan width=2 name="Qac"]
+		@y << p_dc [colorL=darkRed colorD=red width=2 name="Pdc"]
+	end
+	linePlot [xLabel="t [s]" yLabel="pu" name="PV response pu" legend=true]:
+		@x << t
+		@y << p_ac_pu [colorL=darkGreen colorD=green width=2 name="Pac pu"]
+		@y << q_ac_pu [colorL=darkBlue colorD=cyan width=2 name="Qac pu"]
+		@y << p_dc_pu [colorL=darkRed colorD=red width=2 name="Pdc pu"]
+	end
+end
